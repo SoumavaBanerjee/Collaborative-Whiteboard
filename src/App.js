@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Body from "./Components/Body/Body";
 
 function App() {
+  // color and lineWidth are properties of react sketch whiteboard
   const [color, setColor] = useState({});
   const [lineWidth, setLineWidth] = useState(3);
 

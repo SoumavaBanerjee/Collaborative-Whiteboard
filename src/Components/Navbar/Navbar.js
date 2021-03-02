@@ -6,12 +6,13 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import InputColor from "react-input-color";
-import RadioButtonCheckedOutlinedIcon from "@material-ui/icons/RadioButtonCheckedOutlined";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEraser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar({ color, setColor, setLineWidth }) {
   const classes = makeStyles();
   const handleEraser = () => {
-    setLineWidth(15);
+    setLineWidth(20);
     setColor({
       hex: "#E6E6E6",
     });
@@ -41,7 +42,7 @@ export default function Navbar({ color, setColor, setLineWidth }) {
           <div className={`${classes.smMargin} ${classes.flexBox}`}>
             <div className={classes.smMargin}>
               <IconButton edge="start" color="inherit" onClick={handleEraser}>
-                <RadioButtonCheckedOutlinedIcon />
+                <FontAwesomeIcon icon={faEraser} />
               </IconButton>
             </div>
             <div className={classes.smMargin}>
