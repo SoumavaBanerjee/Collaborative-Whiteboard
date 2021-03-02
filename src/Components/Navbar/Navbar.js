@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
+import { Tooltip } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import InputColor from "react-input-color";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +13,7 @@ import { faEraser } from "@fortawesome/free-solid-svg-icons";
 export default function Navbar({ color, setColor, setLineWidth }) {
   const classes = makeStyles();
   const handleEraser = () => {
-    setLineWidth(20);
+    setLineWidth(100);
     setColor({
       hex: "#E6E6E6",
     });
@@ -41,16 +42,20 @@ export default function Navbar({ color, setColor, setLineWidth }) {
           </Typography>
           <div className={`${classes.smMargin} ${classes.flexBox}`}>
             <div className={classes.smMargin}>
-              <IconButton edge="start" color="inherit" onClick={handleEraser}>
-                <FontAwesomeIcon icon={faEraser} />
-              </IconButton>
+              <Tooltip title="Eraser">
+                <IconButton edge="start" color="inherit" onClick={handleEraser}>
+                  <FontAwesomeIcon icon={faEraser} />
+                </IconButton>
+              </Tooltip>
             </div>
             <div className={classes.smMargin}>
-              <InputColor
-                initialValue="#000"
-                onChange={handleInputColorChange}
-                placement="right"
-              />
+              <Tooltip title="color-picker">
+                <InputColor
+                  initialValue="#000"
+                  onChange={handleInputColorChange}
+                  placement="right"
+                />
+              </Tooltip>
             </div>
           </div>
         </Toolbar>

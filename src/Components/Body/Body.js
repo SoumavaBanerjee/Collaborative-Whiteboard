@@ -1,6 +1,7 @@
 import { SketchField, Tools } from "react-sketch-whiteboard";
 
 export default function Body({ color, lineWidth }) {
+  console.log(lineWidth);
   return (
     <div>
       <SketchField
